@@ -1,12 +1,14 @@
-function fibonacci(num) {
-    if (num === 0) return 0;
-    if (num === 1) return 1;
+function calculateFibonacci() {
+    
+    let num = document.getElementById('numberInput').value;
 
-    let a = 0, b = 1;
-    for (let i = 2; i <= num; i++) {
-        [a, b] = [b, a + b];
-    }
-    return b;
+
+    let fibNum = fibonacci(num);
+
+
+    document.getElementById('result').innerText = fibNum;
 }
 
-module.exports = fibonacci;
+function fibonacci(num) {
+    
+}
