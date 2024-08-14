@@ -1,25 +1,15 @@
 
-function calculateFibonacci() {
-    const num = parseInt(document.getElementById('numberInput').value, 10);
-    
-    if (isNaN(num) || num < 0 || num > 50) {
-        alert("Please enter a valid number between 0 and 50.");
-        return;
-    }
-
-    const result = fibonacci(num);
-    document.getElementById('result').textContent = `Fibonacci number at position ${num} is ${result}.`;
+function fibonacci(N) // returns the Nth Fibonacci Number
+{
+let a = 0; // Pos 1 || 1st Finonacci Number || Position 1 in the Fibo. Series 
+let b = 1;  // Pos 2 || 2nd Finonacci Number || Position 2 in the Fibo. Series 
+let c = 0; // Should be position 3
+let currentPosition = 3;
+while (currentPosition <= N) { // Exit when N+1 happens; so c would've been calculated as Position Nth in the Fibo. Series 
+    c = a + b;
+     a = b; // n-2th
+      b = c; // n-1th value
+    ++currentPosition;
 }
-
-function fibonacci(num) {
-    if (num === 0) return 0;
-    if (num === 1) return 0; // Corrected to match provided example
-
-    let a = 0, b = 1;
-    for (let i = 2; i <= num; i++) {
-        let temp = a;
-        a = b;
-        b = temp + b;
-    }
-    return b;
+return c;
 }
