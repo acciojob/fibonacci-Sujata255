@@ -1,20 +1,25 @@
-function fibonacci(num) {
-    if (num === 0) {
-        return 0;
-    } else if (num === 1) {
-        return 1;
-    }
+function secondHighest(arr) {
+  // Handle edge cases: empty array, array with only one element, or all elements are the same
+  if (arr.length === 0 || arr.length === 1 || new Set(arr).size === 1) {
+    return -Infinity;
+  }
 
-    let a = 0, b = 1;
-    for (let i = 2; i <= num; i++) {
-        let next = a + b;
-        a = b;
-        b = next;
+  // Find the highest element
+  let highest = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > highest) {
+      highest = arr[i];
     }
-    return b;
+  }
+
+  // Find the second-highest element
+  let secondHighest = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < highest && arr[i] > secondHighest) {
+      secondHighest   
+ = arr[i];
+    }
+  }
+
+  return secondHighest;
 }
-
-// Example usage:
-console.log(fibonacci(1)); // Output: 0
-console.log(fibonacci(5)); // Output: 3
-console.log(fibonacci(10)); // Output: 34
