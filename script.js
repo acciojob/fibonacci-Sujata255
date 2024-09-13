@@ -14,16 +14,3 @@ function fibonacci(num) {
 
     return b;
 }
-
-function getFibonacci() {
-    const input = document.getElementById("fibonacciInput").value;
-    const num = parseInt(input);
-
-    // Ensure the input is within the valid range
-    if (isNaN(num) || num < 0 || num > 50) {
-        document.getElementById("result").textContent = "Please enter a number between 0 and 50.";
-    } else {
-        const result = fibonacci(num);
-        document.getElementById("result").textContent = `Fibonacci(${num}) = ${result}`;
-    }
-}
