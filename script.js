@@ -16,4 +16,5 @@ for (let i = 3; i <= num; i++){
 	b = temp;
 }
 return b;
-} module.exports = fibonacci;
+} 
+module.exports = fibonacci;
